@@ -1,0 +1,30 @@
+import os
+
+# Chemin du dossier à modifier (à adapter selon ton cas)
+dossier = r"C:\Users\natha\Downloads\data\data"
+
+# Liste des fichiers dans le dossier
+fichiers = os.listdir(dossier)
+
+# On ne garde que les fichiers (pas les sous-dossiers)
+fichiers = [f for f in fichiers if os.path.isfile(os.path.join(dossier, f))]
+
+# Tri pour avoir un ordre fixe (optionnel)
+fichiers.sort()
+
+# Limiter à 50 fichiers maximum
+for i, fichier in enumerate(fichiers[:50], start=1):
+    # Extension du fichier (jpg, txt, etc.)
+    extension = os.path.splitext(fichier)[1]
+    
+    # Nouveau nom (1.jpg, 2.txt, etc.)
+    nouveau_nom = f"{i}{extension}"
+    
+    # Chemins complets
+    ancien_chemin = os.path.join(dossier, fichier)
+    nouveau_chemin = os.path.join(dossier, nouveau_nom)
+    
+    # Renommage
+    os.rename(ancien_chemin, nouveau_chemin)
+
+print("Renommage terminé ")
