@@ -39,9 +39,4 @@ Il est structuré autour de plusieurs fichiers et dossiers, chacun ayant un rôl
 
 ---
 
-## 🚀 Installation & Utilisation
 
-1. **Cloner le repo** :
-   ```bash
-   git clone https://github.com/ton-compte/nom-du-projet.git
-   cd nom-du-projet
